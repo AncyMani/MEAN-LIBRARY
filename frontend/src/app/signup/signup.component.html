@@ -1,0 +1,118 @@
+
+<div id="masthead">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1>{{title}}
+            <p class="lead"></p>
+          </h1>
+        </div>
+        <div class="col-md-5">
+         </div>
+      </div> 
+    </div><!-- /cont -->
+    
+      
+  </div>
+  
+  <div class="box" >
+  <div class="container"   >
+  
+            <!--/stories-->
+            <form [formGroup]="registerForm" (ngSubmit)="OnRegister()">
+    
+              <div   class="containerSignIn" class="col-lg-6" style="border: 1px solid black;" style="background-color: rgba(122, 115, 128, 0.815);">
+             <br>
+                <h2 style="text-align: center;" >Sign Up</h2><br>
+                <div class="col-lg-9" style="margin: 5%;" class="form-group">
+                    <label for="name" >Name</label>
+                    <input type="text" id="name" class="form-control" name="name"  formControlName="name"  >
+                    <div *ngIf="(f.name.touched||f.name.dirty) && f.name.errors"> 
+                        <small class="text-danger" *ngIf="f.name.errors.minlength"  >Name should have atleast 3 letters</small>
+                    <small class="text-danger" *ngIf="f.name.errors.required"  >Password required</small>
+
+                    </div>
+                  </div>
+                <div class="col-lg-9" style="margin: 5%;" class="form-group">
+                  <label for="email" >Email address</label>
+                  <input type="email" id="email" class="form-control"  [(ngModel)]="User.username" formControlName="email" >
+                  <div *ngIf="(f.email.touched||f.email.dirty) && f.email.errors"> 
+                    <small class="text-danger" *ngIf="f.email.errors.pattern"  >Enter valid email</small>
+                    <small class="text-danger" *ngIf="f.email.errors.required"  >Password required</small>
+
+
+                </div>
+                </div>
+                <div class="col-lg-9" style="margin: 5%;"class="form-group" >
+                  <label for="password" >Password</label>
+                  <input type="password" name="password" id="password" class="form-control" [(ngModel)]="User.password" formControlName="password" >
+                  <div *ngIf="(f.password.touched||f.password.dirty) "> 
+                    <!-- <small class="text-danger" *ngIf="f.password.errors.pattern"  >Password not strong</small> -->
+                    <ul style="list-style: none;">
+                      <li >
+                    <small class="text-danger" *ngIf="f.password.errors && f.password.errors.required"  >Password required</small>
+
+                      </li>
+                      <li>
+                        <small class="text-danger"*ngIf=" f.password.errors && f.password.errors.passwordStrength.spclChar"  >Password should contain atleast one special charachter,Upper case ,lower case ,number and splecial charachter</small>
+
+                      </li>
+                      <li>
+                    <small class="text-danger" *ngIf=" f.password.errors && f.password.errors.minlength"  >Minimum length is 8 </small>
+
+                      </li>
+                    </ul>
+                    
+                </div>
+              
+                </div>
+                <div class="col-lg-9" style="margin: 5%;"class="form-group" >
+                    <label for="password1" >Re-type Password</label>
+                    <input type="password" name="password1" id="password1" class="form-control" formControlName="password1"  >
+                    <div *ngIf="(f.password1.touched||f.password1.dirty) && f.password1.errors" > 
+                       <small class="text-danger" *ngIf="f.password1.errors.required"    >Password required</small>
+                       <small class="text-danger" *ngIf="f.password1.errors.MustMatch"    >Password mismatch</small>
+
+                    </div>
+                  
+                  </div>
+                 <br>
+                <span style="padding: 20%;"></span><button id="btn1" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
+                <br>
+                <br>
+                </div>
+            </form>
+            
+     </div>
+    </div>                                             
+                                                                                  
+  <hr>
+  
+  <div class="container" id="footer">
+    <div class="row">
+      <div class="col col-sm-12">
+        
+        <h1>Follow Us</h1>
+        <div class="btn-group">
+         <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+         <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+         <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <footer>
+      <div class="container" style="text-align: center;">
+        <div class="row">
+                <div class="col-sm-6">
+                  <p class="pull-right">MEAN App </p>        
+      
+          </div>
+        </div>
+      </div>
+    </footer>
+

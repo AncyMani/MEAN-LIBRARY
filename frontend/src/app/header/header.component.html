@@ -1,0 +1,21 @@
+<div class="trialnew" calss ="row"  >
+{{title}}
+</div>
+
+<div class="card-header " class="trial" >
+   <a  style="padding: 5px;" *ngIf='!auth.loggedAdmin()||!auth.loggedUser()'  routerLink='/'>Home</a>
+   <a style="padding: 5px;" *ngIf='!(auth.loggedAdmin()||auth.loggedUser())' routerLink='login'>Login</a>
+   <a style="padding: 5px;"*ngIf='!(auth.loggedAdmin()||auth.loggedUser())' routerLink='signup' >Sign Up</a>
+   <!-- <a style="padding: 5px;" *ngIf='auth.loggedAdmin()||auth.loggedUser()' routerLink='books' >Books</a> -->
+   <a style="padding: 5px;" *ngIf='auth.loggedAdmin()||auth.loggedUser()' routerLink='allbook' >Books</a>
+
+   <a style="padding: 5px;" *ngIf='auth.loggedAdmin()||auth.loggedUser()' routerLink='authors' >Authors</a>
+   <a style="padding: 5px;" *ngIf='auth.loggedAdmin()' routerLink='addbook' >Add Book</a>
+   <a style="padding: 5px;" *ngIf='auth.loggedAdmin()'routerLink='addauthor' >Add Author</a>
+    <a style="padding: 5px;" *ngIf='auth.loggedAdmin()||auth.loggedUser()' (click)='logOut()' routerLink='logout' >Log Out</a>
+    
+ </div>
+
+
+   
+

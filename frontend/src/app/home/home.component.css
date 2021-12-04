@@ -1,0 +1,16 @@
+.trial{
+    height: 250px;
+    border-radius: 15px;
+    color: black;   
+  
+}
+.container{
+    align-content: center;
+    padding: 10px;
+  
+}
+.new{
+    padding-top: 30px;
+    text-align: center;
+    
+}

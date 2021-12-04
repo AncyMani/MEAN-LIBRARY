@@ -1,0 +1,76 @@
+
+<div id="masthead">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1>{{title}}
+            <p class="lead"></p>
+          </h1>
+        </div>
+        <div class="col-md-5">
+         </div>
+      </div> 
+    </div><!-- /cont -->
+    
+      
+  </div>
+  
+  <div class="box" >
+  <div class="container"   >
+  
+            <!--/stories-->
+            <form #userlogin="ngForm" (ngSubmit)="Onsubmit()">
+    
+              <div   class="containerSignIn" class="col-lg-6" style="border: 1px solid black;" style="background-color: rgba(122, 115, 128, 0.815);">
+             <br>
+                <h2 style="text-align: center;" >Log In</h2><br>
+               
+                <div class="col-lg-9" style="margin: 5%;" class="form-group">
+                  <label for="email" >Email address</label>
+                  <input type="email" class="form-control" [(ngModel)]="User.username" name="email" #email="ngModel"  [class.is-invalid]="email.invalid && ( email.touched ||  email.dirty)"  pattern="^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
+                  <small class="text-danger" [class.d-none]="email.valid||email.untouched">Enter valid email</small>
+                </div>
+                <div class="col-lg-9" style="margin: 5%;"class="form-group" >
+                  <label for="password" >Password</label>
+                  <input type="password" class="form-control" name="password" [(ngModel)]="User.password" [class.is-invalid]="password.invalid && (password.touched ||  password.dirty)"  #password="ngModel" minlength="6" required>
+                  <small class="text-danger" [class.d-none]="password.valid||password.untouched">Enter valid password</small>
+                </div>
+                 <br>
+                <span style="padding: 20%;"></span><button [disabled]="userlogin.form.invalid" id="btn1" class="btn btn-primary">Submit</button>
+                <br>
+                <br>
+                </div>
+            </form>
+            <!--/stories-->
+     </div>
+    </div>                                             
+                                                                                  
+  <hr>
+  
+  <div class="container" id="footer">
+    <div class="row">
+      <div class="col col-sm-12">
+        
+        <h1>Follow Us</h1>
+        <div class="btn-group">
+         <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+         <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+         <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <footer style="width: 100%;">
+      <div class="container" style="text-align: center;">
+        <div class="row">
+                <div class="col-sm-6">
+                  <p class="pull-right">MEAN App </p>        
+   
+          </div>
+        </div>
+      </div>
+    </footer>
